@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+$prim-c: #1177ff;
+$secondary-c: #9daaa0;
+$success-c: #22aa44;
+$danger-c: #cc3b3b;
+$warning-c: #ffbb33;
+$info-c: #11a2b2;
+$light-c: #f8f9f7;
+$dark-c: #0a000e;
+
+$btn-bg-prim-c: $prim-c;
+$btn-bg-secondary-c: $secondary-c;
+$btn-bg-success-c: $success-c;
+$btn-bg-danger-c: $danger-c;
+$btn-bg-warning-c: $warning-c;
+$btn-bg-info-c: $info-c;
+$btn-bg-light-c: $light-c;
+$btn-bg-dark-c: $dark-c;
+
+$NeonRed: #f40303;
+$NeonGreen: #03f423;
+$NeonBlue: #032ff4;
+$NeonYellow: #f0f403;
+
+$Facebook: #395599;
+$Instagram: #ce2f82;
+$Twitter: #1c9deb;
+$Pinterest: #d73532;
+$LinkedIn: #4064ad;
+$YouTube: #f80000;
+$Snapchat: #ffee00;
+
+$Ipad-Pro: 1024px;
+$Ipad: 768px;
+$Iphone-X: 375px;
+
+$Font-Size_Map: (
+  "xl": 1rem,
+  "lg": 1rem,
+  "md": 1rem,
+  "sm": 1rem,
+);
