@@ -48,3 +48,27 @@ body > header > a {
   padding-left: 4px;
   width: 28px;
 }
+
+main {
+  display: grid;
+  grid:
+    "video-thumbnail" max-content
+    "video-details" max-content
+    "related-videos" max-content
+    "video-comments" max-content
+    / 1fr;
+}
+
+#video-thumbnail {
+  grid-area: video-thumbnail;
+}
+
+#video-details {
+  grid-area: video-details;
+}
+#related-videos {
+  grid-area: related-videos;
+}
+#video-comments {
+  grid-area: video-comments;
+}
