@@ -138,3 +138,106 @@ $Btn_Outline-Colors_Map: (
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
+
+$Neon-Colors_Map: (
+  "red": $NeonRed,
+  "green": $NeonGreen,
+  "blue": $NeonBlue,
+  "yellow": $NeonYellow,
+);
+
+@mixin NeonLineDim($H_Line: true) {
+  @if $H_Line {
+    width: 100%;
+    height: 3px;
+  } @else {
+    width: 3px;
+    height: 100%;
+  }
+}
+
+@mixin NeonLineTop($LineColor) {
+  top: 0;
+  left: 0;
+  @include NeonLineDim($H_Line: true);
+  background: linear-gradient(90deg, transparent, $LineColor);
+  animation: NeonHorizontal 1s linear infinite;
+}
+
+@mixin NeonLineRight($LineColor) {
+  top: -100%;
+  right: 0;
+  @include NeonLineDim($H_Line: false);
+  background: linear-gradient(180deg, transparent, $LineColor);
+  animation: NeonVertical 1s 1.5s linear infinite;
+}
+
+@mixin NeonLineBottom($LineColor) {
+  bottom: 0;
+  right: 0;
+  @include NeonLineDim();
+  background: linear-gradient(90deg, transparent, $LineColor);
+  animation: NeonHorizontal 1s 2s linear infinite reverse;
+}
+
+@mixin NeonLineLeft($LineColor) {
+  top: -100%;
+  left: 0;
+  @include NeonLineDim(false);
+  background: linear-gradient(180deg, transparent, $LineColor);
+  animation: NeonVertical 1s 2.5s linear infinite reverse;
+}
+
+@mixin NeonShadowHover {
+  @each $name, $value in $Neon-Colors_Map {
+    &-#{$name} {
+      color: $value;
+      background-color: darken($color: $value, $amount: 50%);
+      &:hover {
+        transition: all 0.5s ease-in-out;
+        color: #050810;
+        background-color: $value;
+        box-shadow: 0 0 5px $value, 0 0 25px $value, 0 0 50px $value,
+          0 0 200px $value;
+      }
+      & span.neon {
+        position: absolute;
+        display: block;
+        &:nth-child(1) {
+          @include NeonLineTop($value);
+        }
+      }
+    }
+  }
+}
+
+a.btn-Neon {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  color: inherit;
+  transition: 0.5s;
+  @include NeonShadowHover();
+}
+
+@keyframes NeonHorizontal {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes NeonVertical {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
