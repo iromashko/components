@@ -38,6 +38,7 @@ $Btn_Outline-Colors_Map: (
   "outline-info-c": $btn-bg-info-c,
   "outline-light-c": $btn-bg-light-c,
   "outline-warning-c": $btn-bg-warning-c,
+  "outline-dark-c": $btn-bg-dark-c,
 );
 
 @mixin Btn_bg-Transition($speed: 0.5s) {
@@ -99,6 +100,25 @@ $Btn_Outline-Colors_Map: (
   }
 }
 
+@mixin Btn-size {
+  &-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+  }
+  &-sm {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    border-radius: 0.1rem;
+  }
+  &-block {
+    width: 100%;
+  }
+}
+
 .btn {
   @include Buttons();
+  @include Btn-size();
 }
