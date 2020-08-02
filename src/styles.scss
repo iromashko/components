@@ -90,6 +90,32 @@ main {
   color: rgba(17, 17, 17, 0.6);
 }
 
+#social-container {
+  display: grid;
+  grid: 1fr / repeat(5, 1fr);
+  padding: 12px 0;
+}
+
+.social-item {
+  display: grid;
+  justify-items: center;
+  row-gap: 7px;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.social-item.active {
+  color: darkblue;
+}
+
+.social-item > img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.social-item > p {
+  font-size: 1.2rem;
+}
+
 #related-videos {
   grid-area: related-videos;
 }
