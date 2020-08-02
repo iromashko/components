@@ -122,3 +122,19 @@ $Btn_Outline-Colors_Map: (
   @include Buttons();
   @include Btn-size();
 }
+
+.btn-group {
+  margin: 0 0.25rem;
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-group-toggle > .btn input[type="checkbox"],
+.btn-group-toggle > .btn input[type="radio"],
+.btn-group-toggle > .btn-group > .btn input[type="checkbox"],
+.btn-group-toggle > .btn-group > .btn input[type="radio"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
