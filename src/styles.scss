@@ -92,7 +92,8 @@ main {
 }
 
 #video-details > header,
-#video-details > div {
+#video-details > div,
+#related-videos {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -175,6 +176,45 @@ main {
 #related-videos {
   grid-area: related-videos;
 }
+
+#related-videos > header {
+  display: grid;
+  grid: 1fr / 1fr repeat(2, max-content);
+  column-gap: 8px;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+#related-videos > header button {
+  width: 37px;
+  height: 14px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  position: relative;
+}
+
+.autoplay-slider {
+  display: block;
+  width: 37px;
+  height: 14px;
+  border: 8px solid lightslategrey;
+  border-radius: 7px;
+}
+
+.autoplay-slider-toggle-button {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -3px;
+  border-radius: 100%;
+  background: white;
+  box-shadow: 0 1px 3px black;
+}
+
 #video-comments {
   grid-area: video-comments;
 }
